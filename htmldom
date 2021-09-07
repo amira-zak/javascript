@@ -1,0 +1,72 @@
+
+  str="<HTML><P><div></P></HTML>";
+  
+console.log(HTMLString(str));
+
+  //split string to array of elements of the HTML DOM
+function HTMLString(str)
+{ 
+
+ //split str into array of strings with each html element
+  var split =str.split("<");
+    //console.log(split);
+  var y=[""];
+
+  for(i=1;i<split.length;i++)
+   {
+      var x =split[i];
+    // console.log(x);
+      
+      y[i]= x.split(">");
+    } 
+    // console.log(y);
+
+nested=false;
+        t= (y.length-1)/2;
+        if (Number.isInteger(t)==false)
+        return nested;
+var z= "";
+var l=[""];
+var m=[""];
+var q=0;
+for(j=1;j<y.length;j++)
+    {
+  
+      for (k=1;k<y.length+1;k++)
+        {
+          z="/"+y[j];
+         // console.log(z);
+          if (z==y[k])
+          {
+            q++;
+          l[j]=y[j];
+          m[j]=y[k];
+          if(q==t) 
+          nested=true;
+          }
+          
+          
+        }
+        
+    }
+
+       //   console.log(q);
+      // console.log(nested);
+      //console.log(m);
+var p="";
+
+for (n=1;n<l.length && n<m.length;n++)
+{
+  //console.log(l[n]);
+  p="/"+l[n];
+  //console.log(p);
+  if(p!=m[n])
+    {
+      //console.log("here")
+      return false
+    }
+      //return nested;
+  }
+return nested;
+}
+   
