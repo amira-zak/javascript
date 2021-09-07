@@ -1,1 +1,1 @@
-# javascript_sample
+# javascript
