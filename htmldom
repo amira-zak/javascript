@@ -1,4 +1,3 @@
-
   str="<HTML><P><div></P></HTML>";
   
 console.log(HTMLString(str));
